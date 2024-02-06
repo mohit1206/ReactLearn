@@ -1,9 +1,21 @@
-const heading = React.createElement("div",
- { id : 'parent div' },
- [React.createElement("div",{id : "child1 div"}, 
- [React.createElement("h1", {id: "h1 heading"}, "This is h1 tag"),React.createElement("h2", {id: "h2 heading"}, "This is h2 tag")]),
- React.createElement("div",{id : "child2 div"}, 
- [React.createElement("h1", {id: "h1 heading"}, "This is h1 tag"),React.createElement("h2", {id: "h2 heading"}, "This is h2 tag")])]);
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const para = <h2>This is a paragraph.</h2>;
+
+const Title = () => <h1 className="title">This is title component</h1>;
+
+const Heading = () =>{
+   return <>
+        <Title />
+        <Title></Title>
+        {Title()}
+        {para}
+        {100+200}
+        <h1 className="title">This is heading component</h1>
+        <h2>This is second heading</h2>
+    </>
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<Heading />)
